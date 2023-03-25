@@ -9,3 +9,12 @@ def index(request):
         'news' : news
     }
     return render(request, 'index.html',context)
+
+def news_detail(request,id):
+    settings = Setting.objects.latest('id')
+    news = News.objects.get(id=id)
+    context = {
+        'settings' : settings,
+        'news' : news,
+    }
+    return render(request,'single.html',context)
