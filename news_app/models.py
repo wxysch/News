@@ -21,6 +21,7 @@ class News(models.Model):
     headline = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     description = models.TextField()
+    image = models.ImageField(upload_to='news/')
     created = models.CharField(max_length=100)
 
     def __str__(self):
@@ -29,3 +30,18 @@ class News(models.Model):
     class Meta:
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
+
+class Podcast(models.Model):
+    headline = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='news/')
+    created = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.headline
+        
+    class Meta:
+        verbose_name = 'Подкаст'
+        verbose_name_plural = 'Подкасты'
+

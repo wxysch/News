@@ -15,6 +15,6 @@ def news_detail(request,id):
     news = News.objects.get(id=id)
     context = {
         'settings' : settings,
-        'news' : news,
+        'new' : news,
     }
     return render(request,'single.html',context)
