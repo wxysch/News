@@ -1,0 +1,50 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+				{% include 'include/header.html' %}
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						{% include 'include/link.html' %}
+
+						<!-- Actions -->
+							<section>
+								<ul class="actions stacked">
+									<li><a href="#" class="button large fit">Log In</a></li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+						<!-- Post -->
+                        {% for about in abouts %}
+                        <article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">{{  about.title }}</a></h2>
+									</div>
+									<div class="meta">
+										
+										<!-- <a href="#" class="author"><span class="name">Jane Doe</span><img src="images/avatar.jpg" alt="" /></a> -->
+									</div>
+								</header>
+								<span class="image featured"><img src="{{ about.image.url }}" alt="" /></span>
+								<p>{{ about.description }}</p>
+								{% include 'include/footer.html' %}					
+							</article>
+                            {% endfor %}
+					</div>
+			</div>
+			{% endblock %}

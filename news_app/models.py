@@ -56,3 +56,15 @@ class Addvert(models.Model):
     class Meta:
         verbose_name = 'Реклама'
         verbose_name_plural = 'Рекламы'
+
+class About(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='about/')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'О нас'
+        verbose_name_plural = 'О нас'

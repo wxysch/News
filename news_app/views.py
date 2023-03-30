@@ -23,3 +23,9 @@ def news_detail(request,id):
     }
     return render(request,'single.html',context)
 
+def about(request):
+    abouts = About.objects.all()
+    context = {
+        'abouts': abouts,
+    }
+    return render(request, 'about.html',context)
