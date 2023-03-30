@@ -4,9 +4,11 @@ from .models import *
 def index(request):
     settings = Setting.objects.latest('id')
     news  = News.objects.all()
+    podcasts = Podcast.objects.all()
     context = {
         'setting' : settings,
-        'news' : news
+        'news' : news,
+        'podcasts' : podcasts,
     }
     return render(request, 'index.html',context)
 
@@ -18,3 +20,4 @@ def news_detail(request,id):
         'new' : news,
     }
     return render(request,'single.html',context)
+    

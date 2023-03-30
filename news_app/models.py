@@ -33,7 +33,7 @@ class News(models.Model):
 
 class Podcast(models.Model):
     headline = models.CharField(max_length=255)
-    title = models.CharField(max_length=255)
+    category = models.CharField(max_length=255)
     description = models.TextField()
     image = models.ImageField(upload_to='news/')
     created = models.CharField(max_length=100)
