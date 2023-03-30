@@ -5,10 +5,12 @@ def index(request):
     settings = Setting.objects.latest('id')
     news  = News.objects.all()
     podcasts = Podcast.objects.all()
+    addverts = Addvert.objects.all()
     context = {
         'setting' : settings,
         'news' : news,
         'podcasts' : podcasts,
+        'addverts': addverts,
     }
     return render(request, 'index.html',context)
 
@@ -20,4 +22,4 @@ def news_detail(request,id):
         'new' : news,
     }
     return render(request,'single.html',context)
-    
+

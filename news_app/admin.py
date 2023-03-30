@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Setting)
 admin.site.register(News)
 admin.site.register(Podcast)
+admin.site.register(Addvert)

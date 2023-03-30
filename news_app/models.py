@@ -45,3 +45,14 @@ class Podcast(models.Model):
         verbose_name = 'Подкаст'
         verbose_name_plural = 'Подкасты'
 
+class Addvert(models.Model):
+    title = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='addvert/')
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Реклама'
+        verbose_name_plural = 'Рекламы'
